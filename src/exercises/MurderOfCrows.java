@@ -1,3 +1,4 @@
+
 package exercises;
 import java.util.ArrayList;
 import java.util.Random;
@@ -20,8 +21,24 @@ public class MurderOfCrows {
 		
 		/* 2. How many innocent crows had to die before the diamond was found? */
 		
-	}
+	
 
+	int NormalCrows = 0;
+	
+	for(int i =0; i<theMurder.size(); i++) {
+	if (theMurder.get(i).getStomachContents().contains("diamonds")) {
+	System.out.println("Crow with the diaomind is: "+theMurder.get(i).getName());	
+	break;
+	} else
+		NormalCrows++;}
+	if (NormalCrows == 0) {
+		System.out.println("No crows without diamond have died.");
+	}
+	else {System.out.println(NormalCrows + " innocent crows have died before we got to the diamond! :'( ");
+	System.out.println("I don't really like this game...");}
+	}
+	
+	
 	private void initializeCrows() {
 		theMurder.add(new Crow("Rok"));
 		theMurder.add(new Crow("Merle"));
@@ -69,5 +86,8 @@ class Crow {
 	}
 
 }
+
+
+
 
 
